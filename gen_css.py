@@ -1,0 +1,77 @@
+﻿# -*- coding: utf-8 -*-
+with open("frontend/src/index.css", "w", encoding="utf-8") as f:
+    f.write("""@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .box-3d {
+    background-color: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.85);
+    border-radius: 1.5rem;
+    box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.07), 0 4px 10px -2px rgba(15, 23, 42, 0.04), inset 0 1px 0 rgba(255, 255, 255, 1);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .box-3d:hover {
+    box-shadow: 0 20px 35px -8px rgba(15, 23, 42, 0.1), 0 8px 16px -4px rgba(15, 23, 42, 0.05), inset 0 1px 0 rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+  }
+
+  .box-3d-static {
+    background-color: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.85);
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 4px 8px -2px rgba(15, 23, 42, 0.03), inset 0 1px 0 rgba(255, 255, 255, 1);
+  }
+
+  .btn-3d-emerald {
+    background: linear-gradient(180deg, #10b981 0%, #059669 100%);
+    box-shadow: 0 6px 16px -2px rgba(16, 185, 129, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    transition: all 0.2s ease;
+  }
+  .btn-3d-emerald:hover {
+    background: linear-gradient(180deg, #34d399 0%, #10b981 100%);
+    box-shadow: 0 8px 20px -2px rgba(16, 185, 129, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    transform: translateY(-1px);
+  }
+  .btn-3d-emerald:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 6px 0 rgba(16, 185, 129, 0.3);
+  }
+
+  .btn-3d-slate {
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 6px 0 rgba(15, 23, 42, 0.05), inset 0 1px 0 rgba(255, 255, 255, 1);
+    transition: all 0.2s ease;
+  }
+  .btn-3d-slate:hover {
+    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px 0 rgba(15, 23, 42, 0.08);
+  }
+
+  .icon-3d-emerald {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    border: 1px solid #6ee7b7;
+    box-shadow: 0 4px 10px -1px rgba(16, 185, 129, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+  .icon-3d-sky {
+    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+    border: 1px solid #7dd3fc;
+    box-shadow: 0 4px 10px -1px rgba(14, 165, 233, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+  .icon-3d-amber {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 1px solid #fcd34d;
+    box-shadow: 0 4px 10px -1px rgba(245, 158, 11, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+  .icon-3d-rose {
+    background: linear-gradient(135deg, #ffe4e6 0%, #fecdd3 100%);
+    border: 1px solid #fda4af;
+    box-shadow: 0 4px 10px -1px rgba(244, 63, 94, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+}
+""")
+print("index.css updated with 3D shadow and gradient utilities.")

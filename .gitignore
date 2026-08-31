@@ -1,0 +1,24 @@
+# Environments & dependencies
+.env
+.venv/
+env/
+venv/
+node_modules/
+
+# Python cache & builds
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.joblib.bak
+
+# Vite build artifacts
+dist/
+dist-ssr/
+*.local
+
+# System & IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
