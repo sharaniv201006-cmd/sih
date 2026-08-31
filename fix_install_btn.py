@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+﻿# -*- coding: utf-8 -*-
+with open("frontend/src/components/InstallAppButton.jsx", "w", encoding="utf-8") as f:
+    f.write("""import React, { useState, useEffect } from 'react';
 import { Smartphone, Download } from 'lucide-react';
 
 export const InstallAppButton = ({ isCollapsed = false }) => {
@@ -58,3 +60,6 @@ export const InstallAppButton = ({ isCollapsed = false }) => {
     </button>
   );
 };
+""")
+
+print("Updated InstallAppButton.jsx to hide permanently once clicked/installed.")
