@@ -1,20 +1,24 @@
-const CACHE_NAME = 'bovineguard-cache-v1';
-const urlsToCache = [
-  '/',
-  '/index.html',
-  '/manifest.json'
-];
+// BovineGuard AI Service Worker - Network First
+const CACHE_NAME = 'bovineguard-v2';
 
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache))
-  );
+self.addEventListener('install', (e) => {
+  self.skipWaiting();
 });
 
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys().then((keys) => {
+      return Promise.all(
+        keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k))
+      );
     })
+  );
+  return self.clients.claim();
+});
+
+self.addEventListener('fetch', (e) => {
+  // Let network handle all API and assets directly
+  e.respondWith(
+    fetch(e.request).catch(() => caches.match(e.request))
   );
 });
