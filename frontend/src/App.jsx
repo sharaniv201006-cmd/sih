@@ -10,15 +10,6 @@ import { Alerts } from './pages/Alerts';
 import { ModelPerformance } from './pages/ModelPerformance';
 import { Login } from './pages/Login';
 import { fetchHealth, fetchDashboard } from './services/api';
-import { 
-  LayoutDashboard, 
-  PlusCircle, 
-  Activity, 
-  Sliders, 
-  BellRing, 
-  Cpu, 
-  Layers
-} from 'lucide-react';
 
 export function App() {
   const [user, setUser] = useState(() => {
@@ -26,7 +17,7 @@ export function App() {
     return saved ? JSON.parse(saved) : null;
   });
 
-  const [activeTab, setActiveTab] = useState('all-in-one');
+  const [activeTab, setActiveTab] = useState('dashboard');
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [selectedAnimalId, setSelectedAnimalId] = useState(null);
   const [simulatedCowData, setSimulatedCowData] = useState(null);
@@ -58,7 +49,7 @@ export function App() {
   const handleLoginSuccess = (userData) => {
     setUser(userData);
     localStorage.setItem('bovine_user', JSON.stringify(userData));
-    setActiveTab('all-in-one');
+    setActiveTab('dashboard');
   };
 
   const handleLogout = () => {
@@ -80,11 +71,6 @@ export function App() {
 
   const handleRegistrationSuccess = (newCow) => {
     initData();
-  };
-
-  const scrollToSection = (sectionId) => {
-    const el = document.getElementById(sectionId);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
   if (!user) {
@@ -115,115 +101,11 @@ export function App() {
         <Header 
           activeTab={activeTab} 
           setActiveTab={setActiveTab}
-          onQuickRegister={() => setActiveTab('register-animal')}
         />
 
-        {/* Content Body with Proper Balanced Alignment */}
-        <main className="flex-1 p-6 md:p-8 max-w-7xl w-full mx-auto space-y-8">
+        {/* Focused Dedicated Page View */}
+        <main className="flex-1 p-6 md:p-8 max-w-7xl w-full mx-auto space-y-6 animate-fadeIn">
           
-          {/* VIEW A: UNIFIED ALL-IN-ONE VIEW */}
-          {activeTab === 'all-in-one' && (
-            <div className="space-y-12">
-              
-              {/* Section 1: Executive Dashboard */}
-              <section id="sec-dashboard" className="space-y-4">
-                <div className="flex items-center gap-2.5 pb-2 border-b border-slate-200">
-                  <div className="p-2 rounded-xl icon-3d-emerald text-emerald-700">
-                    <LayoutDashboard className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h2 className="text-xl font-black text-slate-900 tracking-tight">Executive Dashboard</h2>
-                    <p className="text-xs text-slate-500">Real-time herd risk segmentation & sensor averages</p>
-                  </div>
-                </div>
-                <Dashboard 
-                  data={dashboardData} 
-                  onSelectAnimal={handleSelectAnimal}
-                  onNavigate={(tab) => {
-                    if (tab === 'alerts') scrollToSection('sec-alerts');
-                    else if (tab === 'animals') scrollToSection('sec-herd');
-                    else setActiveTab(tab);
-                  }}
-                />
-              </section>
-
-              {/* Section 2: Animal Registration */}
-              <section id="sec-register" className="space-y-4 pt-4 border-t border-slate-200">
-                <div className="flex items-center gap-2.5 pb-2 border-b border-slate-200">
-                  <div className="p-2 rounded-xl icon-3d-sky text-sky-700">
-                    <PlusCircle className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h2 className="text-xl font-black text-slate-900 tracking-tight">Animal Registration</h2>
-                    <p className="text-xs text-slate-500">Enroll new bovine with 1-click sample presets & instant AI risk calculation</p>
-                  </div>
-                </div>
-                <AnimalRegistration 
-                  onRegistrationSuccess={handleRegistrationSuccess}
-                  onInspectAnimal={handleSelectAnimal}
-                />
-              </section>
-
-              {/* Section 3: Herd Surveillance Master Inventory */}
-              <section id="sec-herd" className="space-y-4 pt-4 border-t border-slate-200">
-                <div className="flex items-center gap-2.5 pb-2 border-b border-slate-200">
-                  <div className="p-2 rounded-xl icon-3d-emerald text-emerald-700">
-                    <Activity className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h2 className="text-xl font-black text-slate-900 tracking-tight">Herd Surveillance Master Inventory</h2>
-                    <p className="text-xs text-slate-500">Surveillance over 12,000+ cattle records loaded directly from Excel</p>
-                  </div>
-                </div>
-                <Animals onSelectAnimal={handleSelectAnimal} />
-              </section>
-
-              {/* Section 4: Live IoT Simulator */}
-              <section id="sec-iot" className="space-y-4 pt-4 border-t border-slate-200">
-                <div className="flex items-center gap-2.5 pb-2 border-b border-slate-200">
-                  <div className="p-2 rounded-xl icon-3d-amber text-amber-700">
-                    <Sliders className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h2 className="text-xl font-black text-slate-900 tracking-tight">Live IoT Hardware Simulator</h2>
-                    <p className="text-xs text-slate-500">Interactive telemetry testing triggering real-time ML inference</p>
-                  </div>
-                </div>
-                <LiveSensorMonitoring initialCowData={simulatedCowData} />
-              </section>
-
-              {/* Section 5: Decision Alerts */}
-              <section id="sec-alerts" className="space-y-4 pt-4 border-t border-slate-200">
-                <div className="flex items-center gap-2.5 pb-2 border-b border-slate-200">
-                  <div className="p-2 rounded-xl icon-3d-rose text-rose-700">
-                    <BellRing className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h2 className="text-xl font-black text-slate-900 tracking-tight">Decision Alerts & Screening Center</h2>
-                    <p className="text-xs text-slate-500">Configurable risk thresholds & California Mastitis Test (CMT) alerts</p>
-                  </div>
-                </div>
-                <Alerts onSelectAnimal={handleSelectAnimal} />
-              </section>
-
-              {/* Section 6: Model Performance Analytics */}
-              <section id="sec-ml" className="space-y-4 pt-4 border-t border-slate-200">
-                <div className="flex items-center gap-2.5 pb-2 border-b border-slate-200">
-                  <div className="p-2 rounded-xl icon-3d-sky text-sky-700">
-                    <Cpu className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h2 className="text-xl font-black text-slate-900 tracking-tight">XGBoost ML Performance Analytics</h2>
-                    <p className="text-xs text-slate-500">Accuracy metrics, feature importance rankings & confusion matrix</p>
-                  </div>
-                </div>
-                <ModelPerformance />
-              </section>
-
-            </div>
-          )}
-
-          {/* VIEW B: INDIVIDUAL FOCUSED VIEWS */}
           {activeTab === 'dashboard' && (
             <Dashboard 
               data={dashboardData} 
@@ -246,7 +128,7 @@ export function App() {
           {activeTab === 'animal-detail' && selectedAnimalId && (
             <AnimalDetail 
               animalId={selectedAnimalId} 
-              onBack={() => setActiveTab('all-in-one')}
+              onBack={() => setActiveTab('animals')}
               onSimulateWithCow={handleSimulateWithCow}
             />
           )}

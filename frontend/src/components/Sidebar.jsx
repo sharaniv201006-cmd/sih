@@ -6,7 +6,6 @@ import {
   Sliders, 
   BellRing, 
   Cpu, 
-  Layers, 
   LogOut, 
   ChevronLeft, 
   ChevronRight,
@@ -24,7 +23,6 @@ export const Sidebar = ({
   isBackendOnline 
 }) => {
   const menuItems = [
-    { id: 'all-in-one', label: 'All-In-One View', icon: Layers, highlight: true },
     { id: 'dashboard', label: 'Executive Dashboard', icon: LayoutDashboard },
     { id: 'register-animal', label: 'Register Animal', icon: PlusCircle, badge: 'New' },
     { id: 'animals', label: 'Herd Surveillance', icon: Activity },
@@ -61,7 +59,6 @@ export const Sidebar = ({
             )}
           </div>
 
-          {/* Collapse/Expand Toggle Button */}
           <button
             onClick={() => setIsCollapsed(!isCollapsed)}
             className="p-1.5 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-800 transition"
@@ -85,7 +82,7 @@ export const Sidebar = ({
                   isActive
                     ? 'btn-3d-emerald text-white shadow-md shadow-emerald-600/30'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/80'
-                } ${item.highlight && !isActive ? 'text-emerald-700 bg-emerald-50/60 border border-emerald-100' : ''}`}
+                }`}
               >
                 <Icon className={`w-5 h-5 shrink-0 ${isActive ? 'text-white' : 'text-slate-500 group-hover:text-slate-800'}`} />
                 
@@ -107,13 +104,10 @@ export const Sidebar = ({
         </nav>
       </div>
 
-      {/* Bottom Install App, User Profile & Status */}
+      {/* Bottom User Card & Status */}
       <div className="p-3 border-t border-slate-100 space-y-2.5">
-        
-        {/* Install Mobile App Button */}
         <InstallAppButton isCollapsed={isCollapsed} />
 
-        {/* Model Online Status */}
         <div className={`p-2.5 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'}`}>
           <div className="flex items-center gap-2">
             <div className={`w-2.5 h-2.5 rounded-full shrink-0 ${isBackendOnline ? 'bg-emerald-500 animate-pulse' : 'bg-rose-500'}`} />
@@ -128,7 +122,6 @@ export const Sidebar = ({
           )}
         </div>
 
-        {/* User Card & Logout */}
         {user && (
           <div className={`p-2 rounded-2xl bg-white border border-slate-200/90 shadow-2xs flex items-center ${isCollapsed ? 'justify-center' : 'justify-between gap-2'}`}>
             <div className="flex items-center gap-2 overflow-hidden">
