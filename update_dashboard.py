@@ -1,4 +1,6 @@
-import React from 'react';
+﻿# -*- coding: utf-8 -*-
+with open("frontend/src/pages/Dashboard.jsx", "w", encoding="utf-8") as f:
+    f.write("""import React from 'react';
 import { 
   Users, 
   ShieldCheck, 
@@ -293,3 +295,6 @@ export const Dashboard = ({ data, onSelectAnimal, onNavigate }) => {
     </div>
   );
 };
+""")
+
+print("Updated Dashboard.jsx to clean, minimal SIH presentation layout.")
