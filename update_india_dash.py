@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+﻿# -*- coding: utf-8 -*-
+with open("frontend/src/pages/Dashboard.jsx", "w", encoding="utf-8") as f:
+    f.write("""import React, { useState, useEffect } from 'react';
 import { 
   Users, 
   ShieldCheck, 
@@ -351,3 +353,6 @@ export const Dashboard = ({ onSelectAnimal, onNavigate }) => {
     </div>
   );
 };
+""")
+
+print("Updated Dashboard.jsx with Interactive India Map and district-wise drilldown.")

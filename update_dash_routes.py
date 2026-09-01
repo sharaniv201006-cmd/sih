@@ -1,4 +1,6 @@
-from fastapi import APIRouter
+﻿# -*- coding: utf-8 -*-
+with open("backend/app/routes/dashboard.py", "w", encoding="utf-8") as f:
+    f.write("""from fastapi import APIRouter
 from app.services.data_service import (
     get_dashboard_summary,
     get_india_risk_summary,
@@ -23,3 +25,6 @@ def get_state_risk(state_name: str):
 @router.get("/dashboard/district/{district_name}")
 def get_district_risk(district_name: str):
     return get_district_details(district_name)
+""")
+
+print("Updated backend/app/routes/dashboard.py with India map endpoints.")

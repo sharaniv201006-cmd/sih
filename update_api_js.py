@@ -1,4 +1,6 @@
-import axios from 'axios';
+﻿# -*- coding: utf-8 -*-
+with open("frontend/src/services/api.js", "w", encoding="utf-8") as f:
+    f.write("""import axios from 'axios';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
@@ -22,3 +24,6 @@ export const fetchSensorData = async (id) => (await apiClient.get(`/sensor-data/
 export const fetchAnimalPrediction = async (id) => (await apiClient.get(`/predictions/${id}`)).data;
 export const predictRisk = async (payload) => (await apiClient.post('/predict', payload)).data;
 export const fetchModelPerformance = async () => (await apiClient.get('/model-performance')).data;
+""")
+
+print("Updated frontend/src/services/api.js with India risk methods.")
