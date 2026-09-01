@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+﻿# -*- coding: utf-8 -*-
+with open("frontend/src/pages/Animals.jsx", "w", encoding="utf-8") as f:
+    f.write("""import React, { useState, useEffect } from 'react';
 import { 
   Search, 
   ChevronLeft, 
@@ -278,3 +280,6 @@ export const Animals = ({ onSelectAnimal }) => {
     </div>
   );
 };
+""")
+
+print("Updated Animals.jsx with clean, highly understandable layout.")
