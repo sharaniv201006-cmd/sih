@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+﻿# -*- coding: utf-8 -*-
+with open("frontend/src/pages/Alerts.jsx", "w", encoding="utf-8") as f:
+    f.write("""import React, { useState, useEffect } from 'react';
 import { 
   Search, 
   Thermometer, 
@@ -289,3 +291,6 @@ export const Alerts = ({ onSelectAnimal }) => {
     </div>
   );
 };
+""")
+
+print("Updated Alerts.jsx with clean 3-column veterinary cards.")
