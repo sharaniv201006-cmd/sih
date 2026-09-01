@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+﻿# -*- coding: utf-8 -*-
+with open("frontend/src/pages/AnimalDetail.jsx", "w", encoding="utf-8") as f:
+    f.write("""import React, { useState, useEffect } from 'react';
 import { 
   ArrowLeft, 
   AlertTriangle, 
@@ -322,3 +324,6 @@ export const AnimalDetail = ({ animalId, onBack }) => {
     </div>
   );
 };
+""")
+
+print("Updated AnimalDetail.jsx with clean, simple 5-second readable layout.")
