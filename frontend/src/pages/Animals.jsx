@@ -57,11 +57,11 @@ export const Animals = ({ onSelectAnimal }) => {
   };
 
   const filterPills = [
-    { id: 'All', label: 'All Animals', count: '12,006', color: 'slate' },
-    { id: 'High', label: 'High Risk Alert', count: '1,909', color: 'rose', icon: Flame },
-    { id: 'Moderate', label: 'Moderate Watch', count: '2,147', color: 'amber', icon: AlertTriangle },
-    { id: 'Low', label: 'Low Risk', count: '2,336', color: 'sky', icon: AlertCircle },
-    { id: 'No_Risk', label: 'Healthy / No Risk', count: '5,614', color: 'emerald', icon: ShieldCheck },
+    { id: 'All', label: 'All Animals', count: `${totalCount}`, color: 'slate' },
+    { id: 'High', label: 'High Risk Alert', count: '76', color: 'rose', icon: Flame },
+    { id: 'Moderate', label: 'Moderate Watch', count: '67', color: 'amber', icon: AlertTriangle },
+    { id: 'Low', label: 'Low Risk', count: '94', color: 'sky', icon: AlertCircle },
+    { id: 'No_Risk', label: 'Healthy / No Risk', count: '263', color: 'emerald', icon: ShieldCheck },
   ];
 
   return (

@@ -6,7 +6,7 @@ export const Header = ({ activeTab, setActiveTab }) => {
     switch (activeTab) {
       case 'dashboard': return { title: 'Executive Herd Dashboard', sub: 'Real-time herd risk segmentation & analytics' };
       case 'register-animal': return { title: 'Animal Registration', sub: 'Enroll new bovine into active AI surveillance' };
-      case 'animals': return { title: 'Herd Surveillance Master Inventory', sub: 'Surveillance across 12,000+ cattle records' };
+      case 'animals': return { title: 'Herd Surveillance Master Inventory', sub: 'Surveillance across 500 Indian cattle records' };
       case 'live-monitoring': return { title: 'Live IoT Sensor Simulator', sub: 'Interactive biometric & milking telemetry testing' };
       case 'alerts': return { title: 'Decision-Support Alert Center', sub: 'Threshold alerts & California Mastitis Test (CMT) guidance' };
       case 'model-performance': return { title: 'XGBoost ML Performance Analytics', sub: 'Accuracy, confusion matrix & feature importance' };

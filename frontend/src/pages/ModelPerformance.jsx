@@ -105,7 +105,7 @@ export const ModelPerformance = () => {
           </div>
           <p className="mt-4 text-[11px] text-slate-500 border-t border-slate-100 pt-3">
             <strong>Training Details: </strong>
-            150 estimators, max depth = 6, learning rate = 0.08, stratified 80/20 train-test split over 12,000+ dataset records.
+            150 estimators, max depth = 6, learning rate = 0.08, stratified 80/20 train-test split over 500 Indian breed dataset records.
           </p>
         </div>
       </div>

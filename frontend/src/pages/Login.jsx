@@ -169,7 +169,7 @@ export const Login = ({ onLoginSuccess }) => {
         <div className="flex items-center justify-center gap-6 text-center text-xs text-slate-500 font-medium">
           <div className="flex items-center gap-1.5">
             <CheckCircle className="w-4 h-4 text-emerald-600" />
-            <span>12,000+ Cow Records</span>
+            <span>500 Verified Indian Breed Records</span>
           </div>
           <div className="flex items-center gap-1.5">
             <Activity className="w-4 h-4 text-emerald-600" />
