@@ -149,6 +149,11 @@ export const AnimalDetail = ({ animalId, onBack }) => {
           <span className="text-xs font-bold text-emerald-800 bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-200">
             {animal.breed}
           </span>
+          {animal.state && (
+            <span className="text-xs font-bold text-sky-800 bg-sky-50 px-3 py-1.5 rounded-xl border border-sky-200 hidden sm:inline-block">
+              📍 {animal.district ? `${animal.district}, ` : ''}{animal.state}
+            </span>
+          )}
         </div>
       </div>
 

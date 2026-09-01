@@ -207,9 +207,14 @@ export const Animals = ({ onSelectAnimal }) => {
                         </span>
                       </td>
 
-                      {/* Breed */}
-                      <td className="py-4 px-5 font-bold text-slate-700">
-                        {cow.breed.replace('_', ' ')}
+                      {/* Breed & Location */}
+                      <td className="py-4 px-5">
+                        <span className="font-bold text-slate-900 block">{cow.breed.replace('_', ' ')}</span>
+                        {cow.state && (
+                          <span className="text-[11px] text-slate-400 font-medium block">
+                            {cow.district ? `${cow.district}, ` : ''}{cow.state}
+                          </span>
+                        )}
                       </td>
 
                       {/* Body Temp */}
