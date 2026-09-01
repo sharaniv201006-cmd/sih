@@ -1,4 +1,6 @@
-import os
+﻿# -*- coding: utf-8 -*-
+with open("backend/app/ml/train.py", "w", encoding="utf-8") as f:
+    f.write("""import os
 import json
 import joblib
 import numpy as np
@@ -169,3 +171,6 @@ def train_model(data_path=None, model_dir=None):
 
 if __name__ == '__main__':
     train_model()
+""")
+
+print("Updated backend/app/ml/train.py.")

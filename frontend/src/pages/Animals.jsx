@@ -137,12 +137,22 @@ export const Animals = ({ onSelectAnimal }) => {
             onChange={(e) => { setBreedFilter(e.target.value); setPage(1); }}
             className="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-700 focus:outline-none focus:bg-white focus:border-emerald-500 font-bold"
           >
-            <option value="All">All Breeds</option>
-            <option value="Jersey_cross">Jersey Cross</option>
-            <option value="HF_cross">Holstein Friesian (HF)</option>
+            <option value="All">All Indian Breeds</option>
             <option value="Gir">Gir</option>
             <option value="Sahiwal">Sahiwal</option>
-            <option value="Murrah">Murrah Buffalo</option>
+            <option value="Red Sindhi">Red Sindhi</option>
+            <option value="Ongole">Ongole</option>
+            <option value="Hariana">Hariana</option>
+            <option value="Kankrej">Kankrej</option>
+            <option value="Tharparkar">Tharparkar</option>
+            <option value="Hallikar">Hallikar</option>
+            <option value="Deoni">Deoni</option>
+            <option value="Dangi">Dangi</option>
+            <option value="Rathi">Rathi</option>
+            <option value="Kangayam">Kangayam</option>
+            <option value="Umblachery">Umblachery</option>
+            <option value="Vechur">Vechur</option>
+            <option value="Krishna Valley">Krishna Valley</option>
           </select>
         </div>
 

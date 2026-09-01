@@ -259,11 +259,21 @@ export const AnimalRegistration = ({ onRegistrationSuccess, onInspectAnimal }) =
                 onChange={(e) => setBreed(e.target.value)}
                 className="w-full px-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)] transition font-bold"
               >
-                <option value="Jersey_cross">Jersey Cross</option>
-                <option value="HF_cross">Holstein Friesian (HF) Cross</option>
-                <option value="Gir">Gir (Indigenous)</option>
-                <option value="Sahiwal">Sahiwal (Indigenous)</option>
-                <option value="Murrah">Murrah Buffalo</option>
+                <option value="Gir">Gir</option>
+                <option value="Sahiwal">Sahiwal</option>
+                <option value="Red Sindhi">Red Sindhi</option>
+                <option value="Ongole">Ongole</option>
+                <option value="Hariana">Hariana</option>
+                <option value="Kankrej">Kankrej</option>
+                <option value="Tharparkar">Tharparkar</option>
+                <option value="Hallikar">Hallikar</option>
+                <option value="Deoni">Deoni</option>
+                <option value="Dangi">Dangi</option>
+                <option value="Rathi">Rathi</option>
+                <option value="Kangayam">Kangayam</option>
+                <option value="Umblachery">Umblachery</option>
+                <option value="Vechur">Vechur</option>
+                <option value="Krishna Valley">Krishna Valley</option>
               </select>
             </div>
 

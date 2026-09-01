@@ -1,4 +1,7 @@
-import numpy as np
+﻿# -*- coding: utf-8 -*-
+# Update backend/app/ml/preprocess.py
+with open("backend/app/ml/preprocess.py", "w", encoding="utf-8") as f:
+    f.write("""import numpy as np
 import pandas as pd
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
@@ -46,3 +49,6 @@ def create_preprocessor():
         remainder='drop'
     )
     return preprocessor
+""")
+
+print("Updated preprocess.py for Indian breed dataset.")
